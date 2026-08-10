@@ -1,0 +1,45 @@
+{
+  "name": "@agentsafe/core",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Standalone deterministic financial policy core for AgentSafe",
+  "license": "UNLICENSED",
+  "type": "module",
+  "engines": {
+    "node": ">=22",
+    "npm": ">=11"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "db/migrations",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "demo:researchbot": "tsx src/demo/researchbot.ts",
+    "devnet:preflight": "tsx src/demo/devnet-preflight.ts",
+    "devnet:mint-test-token": "tsx src/demo/mint-devnet-test-token.ts --execute",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test": "tsx --test test/*.test.ts",
+    "check": "npm run typecheck && npm test && npm run build"
+  },
+  "devDependencies": {
+    "@types/node": "24.10.1",
+    "tsx": "4.22.4",
+    "typescript": "5.9.3"
+  },
+  "dependencies": {
+    "@solana/kit": "^6.10.0",
+    "@solana/spl-token": "^0.4.14",
+    "@solana/subscriptions": "^0.4.0",
+    "@solana/web3.js": "^1.98.4"
+  }
+}
