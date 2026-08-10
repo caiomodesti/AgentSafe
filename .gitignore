@@ -11,3 +11,4 @@ coverage/
 **/.vinext/
 **/outputs/
 **/.wrangler/
+*-session.jsonl
